@@ -62,9 +62,20 @@ listOf(4, 5, 6)
 
 한번 제가 만들어보겠습니다.
 
-todo 
+```
+val seq: Sequence<Int> = sequence {
+  var seed = 1
+     while (true) {
+        yield(seed)
+        seed += 1
+      }
+   }
+
+print(seq.take(10).toList())
+
+// result
+// 12345678910
 ```
 
-```
-
+중단된 부분부터 다시 재개되기 때문에 1부터 10까지 차례로 출력됩니다.
 
