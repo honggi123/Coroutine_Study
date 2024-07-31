@@ -75,7 +75,7 @@ delay에 의해 중단된 경우 COROUTINE_SUSPENDED가 반환되며, myFunction
 콜 스택에 있는 모든 함수가 종료되며, 중단된 코루틴을 실행하던 스레드를 (다른 종류의 코루틴을 포함해) 실행 가능한 코드가
 사용할 수 있게 됩니다.
 
-지금까지 설계한 함수를 간략화한 최종 모습
+#### 지금까지 설계한 함수를 간략화한 최종 모습
 
 ```
 fun myFunction(contiuation: Contiuation<Unit>): Any { 
@@ -119,7 +119,7 @@ class MyFunctionContiuation(
 }
 ```
 
-📌 짚고 넘어가야할 점
+### 📌 짚고 넘어가야할 점
 코루틴의 동작 원리를 확실히 이해하기 위해, contiuation을 통한 중단과 재개를 코드로 직접 구현해보자 
 
 ### 상태를 가진 함수
@@ -143,7 +143,7 @@ class MyFunctionContiuation(
 ### 🧐 의문점
 콜스택은 함수에 대한 정보를 어떻게 저장할까?
 
-#### 예외
+### 예외
 
 처리되지 못한 예외가 resumewith에서 잡히면 Result.failure(e)로 래핑되며, 예외를 던진 함수를 호출한 함수는 포장된 결과를 받게 됩니다.
 
